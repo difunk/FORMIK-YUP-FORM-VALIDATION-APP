@@ -1,6 +1,36 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+form label {
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+form input {
+  margin-bottom: 4px;
+}
+
+.error {
+  color: #e53935;
+  padding: 0;
+  margin: 0;
+}
+
+.input-error {
+  border: 2px solid #e53935;
+  outline: none;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0rem;
   text-align: center;
+}
+
+button:disabled {
+  opacity: 0.35;
 }
