@@ -26,3 +26,24 @@ export const basicSchema = yup.object().shape({
     .oneOf([yup.ref('password')], 'Password must match')
     .required('Please confirm your password'),
 });
+
+export const advancedSchema = yup.object().shape({
+  username: yup
+    .string()
+    .min(3, 'At least 3 characters long')
+    .required('Required'),
+  jobType: yup
+    .string()
+    .oneOf([
+      'development',
+      'design',
+      'management',
+      'human resource',
+      'social media',
+      'other',
+    ])
+    .required('Required'),
+  acceptedTos: yup
+    .boolean()
+    .oneOf([true], 'Please accept the terms of service'),
+});

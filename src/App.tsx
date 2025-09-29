@@ -1,10 +1,10 @@
 import './App.css';
-import BasicForm from './components/BasicForm';
+import AdvancedForm from './components/AdvancedForm';
 
 function App() {
   return (
     <>
-      <BasicForm />
+      <AdvancedForm />
     </>
   );
 }
