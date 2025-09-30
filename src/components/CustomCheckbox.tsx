@@ -1,10 +1,5 @@
 import { memo } from 'react';
-import {
-  Checkbox,
-  FormControlLabel,
-  FormHelperText,
-  type CheckboxProps,
-} from '@mui/material';
+import { Checkbox, FormControlLabel, type CheckboxProps } from '@mui/material';
 import { useField } from 'formik';
 
 interface CustomCheckboxProps extends Omit<CheckboxProps, 'name' | 'type'> {
@@ -17,7 +12,7 @@ const CustomCheckbox = memo(
     label = 'I accept the terms of service',
     ...props
   }: CustomCheckboxProps) => {
-    const [field, meta] = useField(props);
+    const [field] = useField(props);
     return (
       <>
         <FormControlLabel
@@ -38,10 +33,6 @@ const CustomCheckbox = memo(
           }
           label={label}
         />
-
-        {meta.touched && meta.error && (
-          <FormHelperText error>{meta.error}</FormHelperText>
-        )}
       </>
     );
   }

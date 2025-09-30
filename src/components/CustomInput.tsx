@@ -10,15 +10,13 @@ interface CustomInputProps {
 }
 
 const CustomInput = memo(({ label, ...props }: CustomInputProps) => {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
   return (
     <TextField
       fullWidth
       label={label}
       {...field}
       {...props}
-      error={Boolean(meta.touched && meta.error)}
-      helperText={meta.touched && meta.error ? meta.error : ''}
       variant='outlined'
       margin='normal'
     />

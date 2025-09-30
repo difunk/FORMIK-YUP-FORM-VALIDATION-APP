@@ -2,7 +2,7 @@
 
 ## 📋 Über das Projekt
 
-Eine moderne React-Anwendung mit vollständiger Formularvalidierung, professionellem Material UI Design und TypeScript-Typsicherheit.
+Eine moderne React-Anwendung mit vollständiger Formularvalidierung, professionellem Material UI Design, eleganten Animationen mit framer-motion und TypeScript-Typsicherheit.
 
 ---
 
@@ -17,25 +17,29 @@ Eine moderne React-Anwendung mit vollständiger Formularvalidierung, professione
 
 ### Frontend Libraries
 
-- **Material UI (MUI) 7** - Professionelles Design System
+- **Material UI (MUI) 7** – Professionelles Design System
   - Custom Component-Styling
   - Responsive Layout (Container, Paper, Stack)
   - Typography & Material Icons
-- **Formik 2.4** - Robuste Formular-State-Verwaltung
+  - Modernes, helles Theme mit Glasmorphism-Effekten
+- **Formik 2.4** – Robuste Formular-State-Verwaltung
   - Custom Form Components
   - Performance-optimiert mit React.memo
-- **Yup 1.7** - Schema-basierte Validierung
+- **Yup 1.7** – Schema-basierte Validierung
   - Complex validation rules
   - Type-safe schemas
+- **framer-motion 12** – State-of-the-Art Animationen
+  - Animierte Fehleranzeigen ohne Layout-Shift
+  - Micro-Interactions & Success-Feedback
 
 ---
 
 ## 🎯 Features
 
-- **Type-safe Form Components** - Custom Input, Select und Checkbox Komponenten
-- **Schema-basierte Validierung** - Yup Integration für robuste Formularvalidierung
-- **Material UI Theme** - Dark Theme mit konsistentem Design System
-- **Performance Optimiert** - React.memo und optimierte Rendering-Zyklen
+- **Type-safe Form Components** – Custom Input, Select und Checkbox Komponenten
+- **Schema-basierte Validierung** – Yup Integration für robuste Formularvalidierung
+- **Modernes UI/UX** – Helles, glasmorphes Theme, hohe Lesbarkeit
+- **State-of-the-Art Animationen** – Fehleranzeigen und Success-Feedback mit framer-motion
 
 ---
 

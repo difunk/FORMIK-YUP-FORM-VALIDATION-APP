@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import {
   FormControl,
-  FormHelperText,
   InputLabel,
   Select,
   type SelectProps,
@@ -16,14 +15,10 @@ interface CustomSelectProps extends Omit<SelectProps, 'label' | 'error'> {
 
 const CustomSelect = memo(
   ({ label, children, ...props }: CustomSelectProps) => {
-    const [field, meta] = useField(props);
+    const [field] = useField(props);
     return (
       <>
-        <FormControl
-          fullWidth
-          error={Boolean(meta.touched && meta.error)}
-          margin='normal'
-        >
+        <FormControl fullWidth margin='normal'>
           <InputLabel variant='outlined' id={`${props.name}-label`}>
             {label}
           </InputLabel>
@@ -33,15 +28,14 @@ const CustomSelect = memo(
             labelId={`${props.name}-label`}
             id={`${props.name}-select`}
             label={label}
-            aria-describedby={meta.error ? `${props.name}-error` : undefined}
+            sx={{
+              '& .MuiSelect-icon': {
+                color: '#2563eb',
+              },
+            }}
           >
             {children}
           </Select>
-          {meta.touched && meta.error && (
-            <FormHelperText id={`${props.name}-error`}>
-              {meta.error}
-            </FormHelperText>
-          )}
         </FormControl>
       </>
     );

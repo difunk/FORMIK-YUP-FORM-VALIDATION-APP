@@ -7,17 +7,18 @@ import './index.css';
 
 const theme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#1976d2',
+      main: '#2563eb',
+      light: '#e0e7ff',
     },
     background: {
-      default: '#121212',
-      paper: '#1e1e1e',
+      default: '#f5f7fa',
+      paper: '#fff',
     },
     text: {
-      primary: '#fff',
-      secondary: '#ccc',
+      primary: '#1f2937',
+      secondary: '#374151',
     },
   },
   components: {
@@ -50,6 +51,9 @@ const theme = createTheme({
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
             borderColor: '#1976d2',
           },
+        },
+        icon: {
+          color: '#2563eb',
         },
       },
     },
