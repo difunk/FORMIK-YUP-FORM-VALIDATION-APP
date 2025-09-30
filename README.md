@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# 🚀 Formik + Yup Form Validation App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Über das Projekt
 
-Currently, two official plugins are available:
+Eine moderne React-Anwendung mit vollständiger Formularvalidierung, professionellem Material UI Design und TypeScript-Typsicherheit.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Core Technologies
 
-## Expanding the ESLint configuration
+- **React 19** - Moderne React-Entwicklung mit Hooks
+- **TypeScript 5.8** - Vollständige Typsicherheit und Developer Experience
+- **Vite 7** - Modernes Build-Tool für optimale Performance
+- **ESLint** - Code-Qualität und Konsistenz
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend Libraries
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Material UI (MUI) 7** - Professionelles Design System
+  - Custom Component-Styling
+  - Responsive Layout (Container, Paper, Stack)
+  - Typography & Material Icons
+- **Formik 2.4** - Robuste Formular-State-Verwaltung
+  - Custom Form Components
+  - Performance-optimiert mit React.memo
+- **Yup 1.7** - Schema-basierte Validierung
+  - Complex validation rules
+  - Type-safe schemas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🎯 Features
+
+- **Type-safe Form Components** - Custom Input, Select und Checkbox Komponenten
+- **Schema-basierte Validierung** - Yup Integration für robuste Formularvalidierung
+- **Material UI Theme** - Dark Theme mit konsistentem Design System
+- **Performance Optimiert** - React.memo und optimierte Rendering-Zyklen
+
+---
+
+## 🚀 Setup
+
+```bash
+npm install
+npm run dev    # Development Server
+npm run build  # Production Build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Projektstruktur
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/           # Wiederverwendbare UI-Komponenten
+│   ├── AdvancedForm.tsx  # Haupt-Formular mit MUI Layout
+│   ├── BasicForm.tsx     # Basis-Formular (Vergleich)
+│   ├── CustomInput.tsx   # Type-safe Input Component
+│   ├── CustomSelect.tsx  # Type-safe Select Component
+│   └── CustomCheckbox.tsx # Type-safe Checkbox Component
+├── schemas/              # Yup Validation Schemas
+│   └── index.ts         # Zentrale Schema-Definitionen
+├── main.tsx             # App Entry Point + Theme Provider
+└── App.tsx              # Root Component
 ```

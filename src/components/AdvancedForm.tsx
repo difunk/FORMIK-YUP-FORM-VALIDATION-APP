@@ -1,6 +1,6 @@
 import { Form, Formik, type FormikHelpers } from 'formik';
 import CustomInput from './CustomInput';
-import { advancedSchema } from '../schemas';
+import { advancedSchema, type AdvancedFormValues } from '../schemas';
 import CustomSelect from './CustomSelect';
 import CustomCheckbox from './CustomCheckbox';
 import {
@@ -11,12 +11,6 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-
-type AdvancedFormValues = {
-  username: string;
-  jobType: string;
-  acceptedTos: string;
-};
 
 const onSubmit = async (
   values: AdvancedFormValues,
@@ -36,7 +30,7 @@ const AdvancedForm = () => {
           Advanced Form
         </Typography>
         <Formik
-          initialValues={{ username: '', jobType: '', acceptedTos: '' }}
+          initialValues={{ username: '', jobType: '', acceptedTos: false }}
           validationSchema={advancedSchema}
           onSubmit={onSubmit}
         >

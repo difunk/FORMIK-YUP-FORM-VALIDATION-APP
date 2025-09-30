@@ -1,17 +1,9 @@
 import { useFormik, type FormikHelpers } from 'formik';
-import { basicSchema } from '../schemas';
-
-type FormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
+import { basicSchema, type BasicFormValues } from '../schemas';
 
 const onSubmit = async (
-  values: FormValues,
-  actions: FormikHelpers<FormValues>
+  values: BasicFormValues,
+  actions: FormikHelpers<BasicFormValues>
 ) => {
   console.log('Submit called', values);
   await new Promise((res) => setTimeout(res, 1000));
@@ -28,7 +20,7 @@ const BasicForm = () => {
     handleBlur,
     handleChange,
     handleSubmit,
-  } = useFormik({
+  } = useFormik<BasicFormValues>({
     initialValues: {
       firstName: '',
       lastName: '',

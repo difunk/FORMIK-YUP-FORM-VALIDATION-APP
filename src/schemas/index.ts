@@ -27,6 +27,8 @@ export const basicSchema = yup.object().shape({
     .required('Please confirm your password'),
 });
 
+export type BasicFormValues = yup.InferType<typeof basicSchema>;
+
 export const advancedSchema = yup.object().shape({
   username: yup
     .string()
@@ -35,6 +37,7 @@ export const advancedSchema = yup.object().shape({
   jobType: yup
     .string()
     .oneOf([
+      '',
       'development',
       'design',
       'management',
@@ -47,3 +50,5 @@ export const advancedSchema = yup.object().shape({
     .boolean()
     .oneOf([true], 'Please accept the terms of service'),
 });
+
+export type AdvancedFormValues = yup.InferType<typeof advancedSchema>;
