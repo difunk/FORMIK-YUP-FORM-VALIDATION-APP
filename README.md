@@ -4,6 +4,8 @@
 
 Eine moderne React-Anwendung mit vollständiger Formularvalidierung, professionellem Material UI Design, eleganten Animationen mit framer-motion und TypeScript-Typsicherheit.
 
+<img width="385" height="431" alt="AFTER" src="https://github.com/user-attachments/assets/b49ac9ee-10d9-4054-915e-98f8434cf04a" />
+
 ---
 
 ## 🛠️ Tech Stack
