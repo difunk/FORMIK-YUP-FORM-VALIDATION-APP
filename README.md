@@ -4,7 +4,7 @@
 
 Eine moderne React-Anwendung mit vollständiger Formularvalidierung, professionellem Material UI Design, eleganten Animationen mit framer-motion und TypeScript-Typsicherheit.
 
-<img width="385" height="431" alt="AFTER" src="https://github.com/user-attachments/assets/b49ac9ee-10d9-4054-915e-98f8434cf04a" />
+<img width="642" height="478" alt="AFTER2" src="https://github.com/user-attachments/assets/25ee4919-8315-4589-b9a9-3cadde5fe9f5" />
 
 ---
 
