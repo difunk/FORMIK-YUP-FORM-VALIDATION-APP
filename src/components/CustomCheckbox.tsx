@@ -1,28 +1,52 @@
+import { memo } from 'react';
+import {
+  Checkbox,
+  FormControlLabel,
+  FormHelperText,
+  type CheckboxProps,
+} from '@mui/material';
 import { useField } from 'formik';
 
-interface CustomCheckboxProps {
+interface CustomCheckboxProps extends Omit<CheckboxProps, 'name' | 'type'> {
   name: string;
-  type?: string;
-  placeholder?: string;
+  label?: string;
 }
 
-const CustomCheckbox = ({ ...props }: CustomCheckboxProps) => {
-  const [field, meta] = useField(props);
-  return (
-    <>
-      <div className='checkbox'>
-        <input
-          {...field}
-          {...props}
-          className={meta.touched && meta.error ? 'input-error' : ''}
+const CustomCheckbox = memo(
+  ({
+    label = 'I accept the terms of service',
+    ...props
+  }: CustomCheckboxProps) => {
+    const [field, meta] = useField(props);
+    return (
+      <>
+        <FormControlLabel
+          control={
+            <Checkbox
+              {...field}
+              {...props}
+              checked={field.value === true || field.value === 'true'}
+              onChange={(e) =>
+                field.onChange({
+                  target: {
+                    name: field.name,
+                    value: e.target.checked,
+                  },
+                })
+              }
+            />
+          }
+          label={label}
         />
-        <span>I accept the terms of service</span>
+
         {meta.touched && meta.error && (
-          <div className='error'>{meta.error}</div>
+          <FormHelperText error>{meta.error}</FormHelperText>
         )}
-      </div>
-    </>
-  );
-};
+      </>
+    );
+  }
+);
+
+CustomCheckbox.displayName = 'CustomCheckbox';
 
 export default CustomCheckbox;

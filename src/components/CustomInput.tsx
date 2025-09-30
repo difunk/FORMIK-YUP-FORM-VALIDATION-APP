@@ -1,4 +1,6 @@
+import { memo } from 'react';
 import { useField } from 'formik';
+import TextField from '@mui/material/TextField';
 
 interface CustomInputProps {
   label: string;
@@ -7,19 +9,22 @@ interface CustomInputProps {
   placeholder?: string;
 }
 
-const CustomInput = ({ label, ...props }: CustomInputProps) => {
+const CustomInput = memo(({ label, ...props }: CustomInputProps) => {
   const [field, meta] = useField(props);
   return (
-    <>
-      <label>{label}</label>
-      <input
-        {...field}
-        {...props}
-        className={meta.touched && meta.error ? 'input-error' : ''}
-      />
-      {meta.touched && meta.error && <div className='error'>{meta.error}</div>}
-    </>
+    <TextField
+      fullWidth
+      label={label}
+      {...field}
+      {...props}
+      error={Boolean(meta.touched && meta.error)}
+      helperText={meta.touched && meta.error ? meta.error : ''}
+      variant='outlined'
+      margin='normal'
+    />
   );
-};
+});
+
+CustomInput.displayName = 'CustomInput';
 
 export default CustomInput;

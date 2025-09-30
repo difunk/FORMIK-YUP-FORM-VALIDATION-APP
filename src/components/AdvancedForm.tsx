@@ -3,6 +3,14 @@ import CustomInput from './CustomInput';
 import { advancedSchema } from '../schemas';
 import CustomSelect from './CustomSelect';
 import CustomCheckbox from './CustomCheckbox';
+import {
+  Button,
+  MenuItem,
+  Container,
+  Paper,
+  Stack,
+  Typography,
+} from '@mui/material';
 
 type AdvancedFormValues = {
   username: string;
@@ -22,41 +30,50 @@ const onSubmit = async (
 
 const AdvancedForm = () => {
   return (
-    <Formik
-      initialValues={{ username: '', jobType: '', acceptedTos: '' }}
-      validationSchema={advancedSchema}
-      onSubmit={onSubmit}
-    >
-      {({ isSubmitting }) => (
-        <>
-          <Form>
-            <CustomInput
-              label='Username'
-              name='username'
-              type='text'
-              placeholder='Enter username'
-            />
-            <CustomSelect
-              label='Job Type'
-              name='jobType'
-              placeholder='Please select a job'
-            >
-              <option value=''>Please select a job type</option>
-              <option value='development'>Developer</option>
-              <option value='design'>Designer</option>
-              <option value='management'>Management</option>
-              <option value='human resource'>Human Resource</option>
-              <option value='social media'>Social Media</option>
-              <option value='other'>Other</option>
-            </CustomSelect>
-            <CustomCheckbox type='checkbox' name='acceptedTos' />
-            <button disabled={isSubmitting} type='submit'>
-              Submit
-            </button>
-          </Form>
-        </>
-      )}
-    </Formik>
+    <Container maxWidth='sm' sx={{ py: 4 }}>
+      <Paper elevation={3} sx={{ p: 4 }}>
+        <Typography variant='h4' component='h1' gutterBottom align='center'>
+          Advanced Form
+        </Typography>
+        <Formik
+          initialValues={{ username: '', jobType: '', acceptedTos: '' }}
+          validationSchema={advancedSchema}
+          onSubmit={onSubmit}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <Stack spacing={2}>
+                <CustomInput
+                  label='Username'
+                  name='username'
+                  type='text'
+                  placeholder='Enter username'
+                />
+                <CustomSelect label='Job Type' name='jobType'>
+                  <MenuItem value='development'>Developer</MenuItem>
+                  <MenuItem value='design'>Designer</MenuItem>
+                  <MenuItem value='management'>Management</MenuItem>
+                  <MenuItem value='human resource'>Human Resource</MenuItem>
+                  <MenuItem value='social media'>Social Media</MenuItem>
+                  <MenuItem value='other'>Other</MenuItem>
+                </CustomSelect>
+                <CustomCheckbox name='acceptedTos' />
+                <Button
+                  disabled={isSubmitting}
+                  type='submit'
+                  variant='contained'
+                  color='primary'
+                  fullWidth
+                  sx={{ mt: 2 }}
+                >
+                  Submit
+                </Button>
+              </Stack>
+            </Form>
+          )}
+        </Formik>
+      </Paper>
+    </Container>
   );
 };
 
